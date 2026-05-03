@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- handmade wobbly orange disc -->
+  <path d="M32 4 C 13 4, 5 17, 5 33 C 5 50, 18 61, 34 59 C 50 58, 60 44, 58 27 C 56 12, 46 4, 32 4 Z"
+        fill="#d8541f" stroke="#1a1815" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- eyes -->
+  <circle cx="22" cy="26" r="3" fill="#1a1815"/>
+  <circle cx="42" cy="26" r="3" fill="#1a1815"/>
+  <!-- hand-drawn smile -->
+  <path d="M18 38 C 23 47, 41 48, 47 38"
+        fill="none" stroke="#1a1815" stroke-width="3" stroke-linecap="round"/>
+</svg>
