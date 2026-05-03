@@ -72,26 +72,26 @@
     io.observe(el);
   });
 
-  // ── 5. Timeline dots fill (separate observer with different threshold) ────
-  const dotsIO = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-active');
-        dotsIO.unobserve(entry.target);
-      }
-    });
-  }, { rootMargin: '0px 0px -45% 0px' });
-  document.querySelectorAll('.tl-item').forEach((el) => dotsIO.observe(el));
-
-  // ── 6. Vertical timeline line progress, tied to scroll ────────────────────
+  // ── 5/6. Timeline — line progress + dot activation, both tied to scroll ──
+  // Dots flip to orange exactly when the vertical orange line reaches them.
   const timeline = document.querySelector('.timeline');
   if (timeline) {
+    const items = Array.from(timeline.querySelectorAll('.tl-item'));
     let ticking = false;
     const update = () => {
       const r = timeline.getBoundingClientRect();
+      const tlH = r.height;
       const mid = window.innerHeight * 0.5;
-      const p = Math.max(0, Math.min(1, (mid - r.top) / r.height));
+      const p = Math.max(0, Math.min(1, (mid - r.top) / tlH));
       timeline.style.setProperty('--tl-progress', p.toFixed(3));
+      // The orange line in timeline-local Y: top:8px, height = p*(H-16).
+      // So its bottom edge is at 8 + p*(H-16).
+      const lineBottom = 8 + p * Math.max(0, tlH - 16);
+      // Each .tl-item::before is at top:6px, 18px tall → center at offsetTop + 15.
+      items.forEach((el) => {
+        const dotCenter = el.offsetTop + 15;
+        el.classList.toggle('is-active', lineBottom >= dotCenter);
+      });
       ticking = false;
     };
     const onScroll = () => {
