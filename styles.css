@@ -1006,7 +1006,7 @@ img {
    ============================================ */
 .project-detail {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   gap: 56px;
   padding: 64px 0;
   border-top: 1.5px solid var(--ink);
@@ -1030,6 +1030,9 @@ img {
   aspect-ratio: 4/3;
   position: relative;
   transform: rotate(-1deg);
+  max-width: 440px;
+  width: 100%;
+  justify-self: end;
 }
 .pd-image img {
   position: absolute;
@@ -1234,7 +1237,14 @@ img {
   .contact-card { padding: 28px 24px; }
   .contact-side .side-polaroid { transform: none; margin-top: 8px; }
 
-  .pd-image { aspect-ratio: 16/10; transform: none; margin-top: 8px; }
+  .pd-image {
+    aspect-ratio: 4/3;
+    max-width: 360px;
+    width: 100%;
+    justify-self: start;
+    transform: none;
+    margin-top: 8px;
+  }
 
   .footer-row { flex-direction: column; align-items: flex-start; }
   .footer-meta { text-align: left; }
