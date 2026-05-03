@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr" data-accent="orange" data-mode="light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Contact — Adem Nasri</title>
+<meta name="description" content="Contacter Adem Nasri, développeur full stack à Paris."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Caveat:wght@400;500;600;700&family=Caveat+Brush&family=Kalam:wght@300;400;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">adem<span class="dot"></span></a>
+  <button class="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="primary-nav">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="projets.html">Projets</a></li>
+    <li><a href="index.html#experience">Parcours</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <a href="CV%20Adem%20Nasri%20FR%20Mainframe.pdf" download="CV-Adem-Nasri.pdf" class="nav-cv">↓ CV</a>
+</nav>
+
+<!-- HEADER -->
+<section style="padding:80px 0 40px">
+  <div class="shell">
+    <div class="label" data-reveal style="margin-bottom:24px">✉ Contact</div>
+    <h1 class="hand-xxl" data-reveal data-reveal-delay="1" style="margin-bottom:24px">
+      Dis-moi <span style="color:var(--accent)">tout</span>.
+    </h1>
+    <p class="body-lg" data-reveal data-reveal-delay="2" style="max-width:640px">
+      Une mission full stack, un poste à pourvoir, ou une question technique. Je réponds vite, et toujours en personne — par email, par téléphone, ou via le formulaire ci-dessous.
+    </p>
+  </div>
+</section>
+
+<!-- FORM + SIDEBAR -->
+<section style="padding:40px 0 96px">
+  <div class="shell">
+    <div class="contact-page-grid">
+
+      <div class="card-hand contact-card" data-reveal>
+        <form id="contact-form" class="contact-form">
+          <div class="field">
+            <div class="label">Ton nom</div>
+            <input type="text" name="name" required placeholder="Comme tes parents te connaissent"/>
+          </div>
+          <div class="field">
+            <div class="label">Ton email</div>
+            <input type="email" name="email" required placeholder="pour te répondre"/>
+          </div>
+          <div class="field">
+            <div class="label">Le sujet</div>
+            <div class="subjects" role="radiogroup">
+              <button type="button" class="subject marker-md is-active" data-value="Mission">Mission</button>
+              <button type="button" class="subject marker-md" data-value="Recrutement">Recrutement</button>
+              <button type="button" class="subject marker-md" data-value="Café tech">Café tech</button>
+              <button type="button" class="subject marker-md" data-value="Autre">Autre</button>
+              <input type="hidden" name="subject" value="Mission"/>
+            </div>
+          </div>
+          <div class="field">
+            <div class="label">Le mot</div>
+            <textarea name="message" required placeholder="Raconte-moi ce que tu as en tête…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark">Envoyer le mot →</button>
+        </form>
+
+        <div id="contact-sent" class="contact-sent" hidden>
+          <svg viewBox="0 0 30 30" style="width:60px;height:60px;color:var(--accent);margin:0 auto 16px;display:block" aria-hidden="true">
+            <path d="M5 16 L 12 23 L 26 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="hand-xl" style="margin-bottom:12px">Reçu 5 sur 5.</h3>
+          <p class="body-lg" style="color:var(--ink-mute)">Je te réponds sous 24h, en général bien plus vite.</p>
+          <button type="button" id="contact-reset" class="btn" style="margin-top:24px">Envoyer un autre mot</button>
+        </div>
+      </div>
+
+      <aside class="contact-side">
+        <div class="side-block" data-reveal data-reveal-delay="0">
+          <div class="label">Email</div>
+          <a href="mailto:nasri.adem@hotmail.fr" class="marker-lg side-value">nasri.adem@hotmail.fr</a>
+        </div>
+        <div class="side-block" data-reveal data-reveal-delay="1">
+          <div class="label">Téléphone</div>
+          <a href="tel:0618567675" class="marker-lg side-value">06 18 56 76 75</a>
+        </div>
+        <div class="side-block" data-reveal data-reveal-delay="2">
+          <div class="label">LinkedIn</div>
+          <a href="https://linkedin.com/in/adem-n" class="marker-lg side-value">/in/adem-n</a>
+        </div>
+        <div class="side-block" data-reveal data-reveal-delay="3">
+          <div class="label">Localisation</div>
+          <div class="marker-lg side-value">12 rue d'Orchampt</div>
+          <div class="marker-md" style="color:var(--ink-mute)">75018 Paris · France</div>
+        </div>
+        <div class="side-polaroid">
+          <div class="polaroid polaroid-drop" style="--pol-rotate:0deg;width:240px">
+            <div style="width:100%;aspect-ratio:1/1.1;position:relative;overflow:hidden;background:linear-gradient(180deg,#d8d2c0,#b8b0a0)">
+              <img src="assets/adem-hero.jpg" alt="à bientôt — adem" style="width:100%;height:100%;object-fit:cover;object-position:55% 30%;display:block;filter:contrast(1.04) saturate(0.92)"/>
+              <div class="tape-top" style="position:absolute;top:-12px;left:50%;width:80px;height:22px;background:var(--tape);border-left:1px solid var(--tape-edge);border-right:1px solid var(--tape-edge);box-shadow:0 2px 4px rgba(0,0,0,0.10)"></div>
+            </div>
+            <div class="polaroid-caption">à bientôt — adem</div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="shell footer-row">
+    <div data-reveal>
+      <div class="hand-lg name">adem<span style="color:var(--accent)">.</span></div>
+      <div class="marker-sm name-sub">Fait main, à Paris, en 2026.</div>
+    </div>
+    <div class="footer-meta mono" data-reveal data-reveal-delay="1">
+      © 2026 Adem Nasri · tous droits réservés<br/>
+      — pas de cookies, pas de tracking, juste un site.
+    </div>
+  </div>
+</footer>
+
+<script src="nav.js" defer></script>
+<script src="contact.js" defer></script>
+<script src="animations.js" defer></script>
+</body>
+</html>
