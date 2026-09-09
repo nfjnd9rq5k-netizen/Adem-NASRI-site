@@ -14,11 +14,38 @@ import hashlib, os, re, sys, shutil
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SOURCES = ["styles.css", "animations.js", "nav.js", "contact.js"]
 OUT_DIR = "assets/build"
+IMG_DIR = "assets/projets"
+RE_EMPREINTE = re.compile(r"^(?P<base>.+?)(?:\.[0-9a-f]{10})?\.webp$")
 
 
 def empreinte(chemin):
     h = hashlib.sha256(open(chemin, "rb").read()).hexdigest()[:10]
     return h
+
+
+def empreinte_images():
+    """Renomme les captures en <base>.<empreinte>.webp.
+
+    Meme raison que pour les CSS/JS : .htaccess demande un cache d'un an sur
+    les images et le CDN garde des copies perimees. Deux captures corrigees
+    etaient encore servies dans leur ancienne version. Le nom porte donc
+    l'empreinte du contenu ; l'operation est idempotente (une empreinte
+    existante est retiree avant d'etre recalculee)."""
+    d = os.path.join(ROOT, IMG_DIR)
+    if not os.path.isdir(d):
+        return {}
+    renommes = {}
+    for f in sorted(os.listdir(d)):
+        m = RE_EMPREINTE.match(f)
+        if not m:
+            continue
+        base = m.group("base")
+        h = empreinte(os.path.join(d, f))
+        cible = f"{base}.{h}.webp"
+        if cible != f:
+            os.replace(os.path.join(d, f), os.path.join(d, cible))
+            renommes[f] = cible
+    return renommes
 
 
 def pages_html():
@@ -30,6 +57,10 @@ def pages_html():
 
 
 def main():
+    renommes = empreinte_images()
+    if renommes:
+        print(f"{len(renommes)} captures renommees avec leur empreinte")
+
     os.makedirs(os.path.join(ROOT, OUT_DIR), exist_ok=True)
     versions = {}
     for src in SOURCES:

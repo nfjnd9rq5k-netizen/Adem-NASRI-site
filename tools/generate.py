@@ -19,11 +19,20 @@ import os, subprocess, sys
 ICI = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(ICI)
 sys.path.insert(0, ICI)
+sys.path.insert(0, ROOT)   # pour importer build.py
 
-import gen, data
+import gen
 
 
 def main():
+    # Les captures sont empreintees AVANT la generation : le HTML doit
+    # referencer le nom definitif du fichier, empreinte comprise.
+    import build
+    renommes = build.empreinte_images()
+    if renommes:
+        print(f"{len(renommes)} captures renommees avec leur empreinte\n")
+
+    import data                      # importe apres, pour lire les noms a jour
     pages = gen.write_all(data.CASES, data.INTRO)
     print(f"{len(pages)} pages ecrites :")
     for p in pages:

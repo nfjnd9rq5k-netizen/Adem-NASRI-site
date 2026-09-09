@@ -33,12 +33,23 @@ def _webp_size(chemin):
 
 
 def dim(name):
-    """(fichier, largeur, hauteur) lues sur le fichier reel — jamais recopiees."""
-    chemin = os.path.join(A, name)
-    if not os.path.exists(chemin):
-        raise SystemExit(f"ABANDON : visuel introuvable — {chemin}")
-    w, h = _webp_size(chemin)
-    return (name, w, h)
+    """(fichier reel, largeur, hauteur). Le nom passe ici est le nom de base
+    (chalery-scroll.webp) ; le fichier sur le disque porte en plus une
+    empreinte de contenu posee par build.py (chalery-scroll.a1b2c3d4e5.webp).
+    On resout donc le nom reel, et les dimensions sont lues dans le fichier."""
+    stem = name[:-5] if name.endswith(".webp") else name
+    candidats = [f for f in os.listdir(A)
+                 if f == f"{stem}.webp"
+                 or (f.startswith(stem + ".") and f.endswith(".webp")
+                     and len(f) == len(stem) + 16)]
+    if not candidats:
+        raise SystemExit(f"ABANDON : visuel introuvable — {stem}.webp dans {A}")
+    if len(candidats) > 1:
+        raise SystemExit(f"ABANDON : plusieurs versions de {stem}.webp — {candidats}. "
+                         "Relancer build.py pour n'en garder qu'une.")
+    reel = candidats[0]
+    w, h = _webp_size(os.path.join(A, reel))
+    return (reel, w, h)
 
 LASTMOD = "2026-09-09"   # date des <lastmod> du sitemap
 
