@@ -1,0 +1,466 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - link "adem" [ref=e3] [cursor=pointer]:
+      - /url: ./
+      - text: adem
+    - list [ref=e5]:
+      - listitem [ref=e6]:
+        - link "Accueil" [ref=e7] [cursor=pointer]:
+          - /url: ./
+      - listitem [ref=e8]:
+        - link "Projets" [ref=e9] [cursor=pointer]:
+          - /url: projets/
+      - listitem [ref=e10]:
+        - link "Parcours" [ref=e11] [cursor=pointer]:
+          - /url: parcours/
+      - listitem [ref=e12]:
+        - link "Contact" [ref=e13] [cursor=pointer]:
+          - /url: contact/
+    - link "↓ CV" [ref=e14] [cursor=pointer]:
+      - /url: cv-adem-nasri.6343d3d69e.pdf
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - generic [ref=e20]:
+            - text: Portfolio · 2026
+            - img [ref=e21]
+          - heading "Adem Nasri." [level=1] [ref=e24]:
+            - text: Adem
+            - text: Nasri.
+          - paragraph [ref=e25]: Développeur web freelance à Paris, étudiant à l'École 42. Je construis des sites qui chargent vite — et je fais en sorte qu'on les trouve.
+          - paragraph [ref=e26]: "Six sites en ligne pour cinq clients : kinés, salles de sport, énergie, e-commerce. HTML, CSS, JavaScript — sans CMS ni framework inutile. Et le référencement qui va avec."
+          - generic [ref=e27]:
+            - link "Voir mes projets →" [ref=e28] [cursor=pointer]:
+              - /url: projets/
+            - link "Travailler ensemble" [ref=e29] [cursor=pointer]:
+              - /url: contact/
+        - generic [ref=e31]:
+          - img "Portrait d'Adem Nasri, développeur web freelance à Paris" [ref=e33]
+          - generic [ref=e35]: Adem · Paris 18ᵉ
+      - img [ref=e36]
+    - generic [ref=e41]:
+      - generic [ref=e44]: ★ À propos · 01
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - heading "Un parcours qui tient." [level=2] [ref=e47]:
+            - text: Un parcours
+            - text: qui tient.
+          - img [ref=e48]
+        - generic [ref=e51]:
+          - paragraph [ref=e52]: J'ai commencé par une licence de biochimie à Montpellier — paillasses, statistiques, méthode expérimentale. Ce que j'en garde, c'est l'habitude d'observer avant de conclure et de mesurer avant d'affirmer.
+          - paragraph [ref=e53]:
+            - text: Puis l'
+            - generic [ref=e54]:
+              - text: École 42
+              - img
+            - text: "à Paris, où je suis aujourd'hui étudiant. En parallèle, j'apprends le métier en le faisant : des sites livrés à de vrais clients, mis en ligne, et suivis une fois en ligne."
+          - paragraph [ref=e55]: "Ce que je fais tient en deux choses : construire des sites rapides en HTML, CSS et JavaScript, sans CMS ni framework inutile — et faire en sorte qu'on les trouve, sur Google comme dans les réponses des IA."
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - generic [ref=e58]: 6 sites
+              - generic [ref=e59]: en ligne, pour 5 clients
+            - generic [ref=e60]:
+              - generic [ref=e61]: 4 000+
+              - generic [ref=e62]: visites mensuelles pour un client
+    - generic [ref=e64]:
+      - generic [ref=e67]: ☆ Stack · 02
+      - generic [ref=e68]:
+        - heading "Ce que je sais faire." [level=2] [ref=e69]:
+          - text: Ce que
+          - text: je sais
+          - text: faire.
+        - paragraph [ref=e70]: "La liste honnête : ce qui tourne aujourd'hui sur des sites clients en production, et ce que je propose sans l'avoir encore facturé — c'est écrit noir sur blanc. Rien d'ajouté pour faire bien sur un CV."
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - generic [ref=e73]: Sites web
+          - list [ref=e74]:
+            - listitem [ref=e75]:
+              - generic [ref=e76]: ·
+              - generic [ref=e77]: HTML5 sémantique
+            - listitem [ref=e78]:
+              - generic [ref=e79]: ·
+              - generic [ref=e80]: CSS moderne (grid, flex, variables)
+            - listitem [ref=e81]:
+              - generic [ref=e82]: ·
+              - generic [ref=e83]: JavaScript (ES6+), sans framework
+            - listitem [ref=e84]:
+              - generic [ref=e85]: ·
+              - generic [ref=e86]: Responsive, pensé mobile d'abord
+            - listitem [ref=e87]:
+              - generic [ref=e88]: ·
+              - generic [ref=e89]: Sites statiques — pas de CMS à maintenir
+        - generic [ref=e90]:
+          - generic [ref=e91]: Référencement SEO
+          - list [ref=e92]:
+            - listitem [ref=e93]:
+              - generic [ref=e94]: ·
+              - generic [ref=e95]: SEO technique (indexation, vitesse)
+            - listitem [ref=e96]:
+              - generic [ref=e97]: ·
+              - generic [ref=e98]: SEO local multi-établissements
+            - listitem [ref=e99]:
+              - generic [ref=e100]: ·
+              - generic [ref=e101]: Données structurées Schema.org
+            - listitem [ref=e102]:
+              - generic [ref=e103]: ·
+              - generic [ref=e104]: Rédaction optimisée
+            - listitem [ref=e105]:
+              - generic [ref=e106]: ·
+              - generic [ref=e107]: Maillage interne
+            - listitem [ref=e108]:
+              - generic [ref=e109]: ·
+              - generic [ref=e110]: Sitemaps, robots.txt, hreflang
+        - generic [ref=e111]:
+          - generic [ref=e112]: GEO — visibilité IA
+          - list [ref=e113]:
+            - listitem [ref=e114]:
+              - generic [ref=e115]: ·
+              - generic [ref=e116]: llms.txt et llms-full.txt
+            - listitem [ref=e117]:
+              - generic [ref=e118]: ·
+              - generic [ref=e119]: Balisage FAQPage
+            - listitem [ref=e120]:
+              - generic [ref=e121]: ·
+              - generic [ref=e122]: Contenu citable par les IA
+            - listitem [ref=e123]:
+              - generic [ref=e124]: ·
+              - generic [ref=e125]: Accès crawlers (GPTBot, ClaudeBot…)
+        - generic [ref=e126]:
+          - generic [ref=e127]: SEA — publicité(proposé)
+          - list [ref=e128]:
+            - listitem [ref=e129]:
+              - generic [ref=e130]: ·
+              - generic [ref=e131]: Google Ads
+            - listitem [ref=e132]:
+              - generic [ref=e133]: ·
+              - generic [ref=e134]: Meta Ads
+            - listitem [ref=e135]:
+              - generic [ref=e136]: ·
+              - generic [ref=e137]: Suivi des conversions
+        - generic [ref=e138]:
+          - generic [ref=e139]: E-commerce
+          - list [ref=e140]:
+            - listitem [ref=e141]:
+              - generic [ref=e142]: ·
+              - generic [ref=e143]: Shopify
+            - listitem [ref=e144]:
+              - generic [ref=e145]: ·
+              - generic [ref=e146]: Liquid (sections sur mesure)
+            - listitem [ref=e147]:
+              - generic [ref=e148]: ·
+              - generic [ref=e149]: Catalogue et catégories produits
+            - listitem [ref=e150]:
+              - generic [ref=e151]: ·
+              - generic [ref=e152]: Tunnel d'achat
+        - generic [ref=e153]:
+          - generic [ref=e154]: Performance & conformité
+          - list [ref=e155]:
+            - listitem [ref=e156]:
+              - generic [ref=e157]: ·
+              - generic [ref=e158]: Core Web Vitals
+            - listitem [ref=e159]:
+              - generic [ref=e160]: ·
+              - generic [ref=e161]: Accessibilité WCAG
+            - listitem [ref=e162]:
+              - generic [ref=e163]: ·
+              - generic [ref=e164]: RGPD et bandeau de consentement
+            - listitem [ref=e165]:
+              - generic [ref=e166]: ·
+              - generic [ref=e167]: GA4 avec Consent Mode v2
+            - listitem [ref=e168]:
+              - generic [ref=e169]: ·
+              - generic [ref=e170]: Mise en ligne, HTTPS, .htaccess
+    - generic [ref=e172]:
+      - generic [ref=e175]: ✦ Projets · 03
+      - generic [ref=e176]:
+        - heading "Ce que j'ai déjà livré." [level=2] [ref=e177]:
+          - text: Ce que j'ai
+          - text: déjà livré.
+        - link "Tout voir" [ref=e178] [cursor=pointer]:
+          - /url: projets/
+          - text: Tout voir
+          - img [ref=e179]
+      - article [ref=e182]:
+        - generic [ref=e183]: "01"
+        - generic [ref=e184]:
+          - heading "Kinés Paris & Maison du Peps" [level=3] [ref=e185]:
+            - link "Kinés Paris & Maison du Peps" [ref=e186] [cursor=pointer]:
+              - /url: projets/kines-paris-maison-du-peps/
+          - generic [ref=e187]: Deux sites + SEO/GEO en continu
+          - link "↗ kinesparis.fr" [ref=e188] [cursor=pointer]:
+            - /url: https://www.kinesparis.fr/
+        - generic [ref=e189]:
+          - paragraph [ref=e190]: Deux sites pour un réseau de cinq cabinets de kiné et deux salles de sport-santé, plus le SEO/GEO suivi mois après mois. Cent pages, 46 articles, une version anglaise complète.
+          - generic [ref=e191]:
+            - generic [ref=e192]: HTML statique
+            - generic [ref=e193]: CSS à design tokens
+            - generic [ref=e194]: JS vanilla
+            - generic [ref=e195]: SEO/GEO
+          - link "Voir l'étude de cas →" [ref=e196] [cursor=pointer]:
+            - /url: projets/kines-paris-maison-du-peps/
+        - generic [ref=e197]: 2026 → aujourd'hui
+      - article [ref=e198]:
+        - generic [ref=e199]: "02"
+        - generic [ref=e200]:
+          - heading "Chalery" [level=3] [ref=e201]:
+            - link "Chalery" [ref=e202] [cursor=pointer]:
+              - /url: projets/chalery/
+          - generic [ref=e203]: Site vitrine + simulateur de prix
+          - link "↗ chalery.fr" [ref=e204] [cursor=pointer]:
+            - /url: https://www.chalery.fr/
+        - generic [ref=e205]:
+          - paragraph [ref=e206]: Site vitrine dessiné comme un plan technique, avec un simulateur en 7 écrans qui redessine une coupe du logement en SVG à chaque réponse et sort un prix avant tout appel.
+          - generic [ref=e207]:
+            - generic [ref=e208]: HTML statique
+            - generic [ref=e209]: CSS natif
+            - generic [ref=e210]: JS vanilla
+            - generic [ref=e211]: SVG paramétrique
+          - link "Voir l'étude de cas →" [ref=e212] [cursor=pointer]:
+            - /url: projets/chalery/
+        - generic [ref=e213]: "2026"
+      - article [ref=e214]:
+        - generic [ref=e215]: "03"
+        - generic [ref=e216]:
+          - heading "AMB Énergies" [level=3] [ref=e217]:
+            - link "AMB Énergies" [ref=e218] [cursor=pointer]:
+              - /url: projets/amb-energies/
+          - generic [ref=e219]: Site + SEO/GEO
+          - link "↗ ambenergies.com" [ref=e220] [cursor=pointer]:
+            - /url: https://ambenergies.com/
+        - generic [ref=e221]:
+          - paragraph [ref=e222]: "Site et SEO/GEO d'un installateur RGE, écrit à contre-courant du démarchage : pas de grille de prix, une prime supprimée annoncée en page d'accueil, 65 guides."
+          - generic [ref=e223]:
+            - generic [ref=e224]: HTML statique
+            - generic [ref=e225]: CSS en variables
+            - generic [ref=e226]: JS vanilla
+            - generic [ref=e227]: PHP
+          - link "Voir l'étude de cas →" [ref=e228] [cursor=pointer]:
+            - /url: projets/amb-energies/
+        - generic [ref=e229]: "2026"
+      - article [ref=e230]:
+        - generic [ref=e231]: "04"
+        - generic [ref=e232]:
+          - heading "Relapro" [level=3] [ref=e233]:
+            - link "Relapro" [ref=e234] [cursor=pointer]:
+              - /url: projets/relapro/
+          - generic [ref=e235]: Site + SEO local
+          - link "↗ relapro.fr" [ref=e236] [cursor=pointer]:
+            - /url: https://relapro.fr/
+        - generic [ref=e237]:
+          - paragraph [ref=e238]: "Site et SEO local d'un bureau d'études thermiques : une échelle DPE qui grimpe de G vers A au fil du défilement, un simulateur en 9 étapes, cinq villes couvertes."
+          - generic [ref=e239]:
+            - generic [ref=e240]: HTML statique
+            - generic [ref=e241]: CSS en variables
+            - generic [ref=e242]: JS vanilla
+            - generic [ref=e243]: PHP
+          - link "Voir l'étude de cas →" [ref=e244] [cursor=pointer]:
+            - /url: projets/relapro/
+        - generic [ref=e245]: "2026"
+      - article [ref=e246]:
+        - generic [ref=e247]: "05"
+        - generic [ref=e248]:
+          - heading "Malamour" [level=3] [ref=e249]:
+            - link "Malamour" [ref=e250] [cursor=pointer]:
+              - /url: projets/malamour/
+          - generic [ref=e251]: Création du site, du design et du catalogue Shopify
+          - link "↗ malamourrrrrr.com" [ref=e252] [cursor=pointer]:
+            - /url: https://malamourrrrrr.com/
+        - generic [ref=e253]:
+          - paragraph [ref=e254]: Création du site, du design et du catalogue Shopify pour deux fondatrices italiennes venues de la mode. Huit sections Liquid écrites sur mesure pour deux références.
+          - generic [ref=e255]:
+            - generic [ref=e256]: Shopify
+            - generic [ref=e257]: Liquid
+            - generic [ref=e258]: JS vanilla
+            - generic [ref=e259]: Design
+          - link "Voir l'étude de cas →" [ref=e260] [cursor=pointer]:
+            - /url: projets/malamour/
+        - generic [ref=e261]: "2025"
+      - article [ref=e262]:
+        - generic [ref=e263]: "06"
+        - generic [ref=e264]:
+          - heading "La Maison du Test" [level=3] [ref=e265]:
+            - link "La Maison du Test" [ref=e266] [cursor=pointer]:
+              - /url: projets/la-maison-du-test/
+          - generic [ref=e267]: Développeur — outil interne
+          - generic [ref=e268]: Outil interne, non public
+        - generic [ref=e269]:
+          - paragraph [ref=e270]: "Le CRM maison qui sert à créer et piloter les études consommateurs : collecte automatisée, nettoyage des données brutes, LLM intégrés au workflow d'analyse."
+          - generic [ref=e271]:
+            - generic [ref=e272]: PHP / Laravel
+            - generic [ref=e273]: Python
+            - generic [ref=e274]: JavaScript
+            - generic [ref=e275]: LLM (Claude / GPT)
+          - link "Voir l'étude de cas →" [ref=e276] [cursor=pointer]:
+            - /url: projets/la-maison-du-test/
+        - generic [ref=e277]: Déc. 2025 → aujourd'hui
+    - generic [ref=e279]:
+      - generic [ref=e282]: ✱ Parcours · 04
+      - generic [ref=e283]:
+        - heading "Le chemin jusqu'ici." [level=2] [ref=e284]:
+          - text: Le chemin
+          - text: jusqu'ici.
+        - link "Voir le parcours complet" [ref=e285] [cursor=pointer]:
+          - /url: parcours/
+          - text: Voir le parcours complet
+          - img [ref=e286]
+      - generic [ref=e289]:
+        - generic [ref=e291]:
+          - generic [ref=e292]: En cours
+          - generic [ref=e293]:
+            - heading "Étudiant" [level=3] [ref=e294]
+            - generic [ref=e295]: École 42 — Paris
+            - list [ref=e296]:
+              - listitem [ref=e297]:
+                - img [ref=e298]
+                - generic [ref=e300]: "Tronc commun : C, algorithmique, système, réseau"
+              - listitem [ref=e301]:
+                - img [ref=e302]
+                - generic [ref=e304]: Pédagogie par projets et peer-learning — ni cours, ni professeur
+              - listitem [ref=e305]:
+                - img [ref=e306]
+                - generic [ref=e308]: Code review continue entre pairs
+        - generic [ref=e310]:
+          - generic [ref=e311]: 2023 → aujourd'hui
+          - generic [ref=e312]:
+            - heading "Développeur web freelance" [level=3] [ref=e313]
+            - generic [ref=e314]: Sites, référencement et e-commerce
+            - list [ref=e315]:
+              - listitem [ref=e316]:
+                - img [ref=e317]
+                - generic [ref=e319]: "Six sites en ligne pour cinq clients : kiné, sport-santé, énergie, e-commerce"
+              - listitem [ref=e320]:
+                - img [ref=e321]
+                - generic [ref=e323]: HTML, CSS et JavaScript — sans CMS ni framework à maintenir
+              - listitem [ref=e324]:
+                - img [ref=e325]
+                - generic [ref=e327]: Référencement SEO et GEO suivi mois après mois
+              - listitem [ref=e328]:
+                - img [ref=e329]
+                - generic [ref=e331]: "Boutique Shopify : design, catalogue et tunnel d'achat"
+              - listitem [ref=e332]:
+                - img [ref=e333]
+                - generic [ref=e335]: Statut auto-entrepreneur
+        - generic [ref=e337]:
+          - generic [ref=e338]: Déc. 2025 — 2026
+          - generic [ref=e339]:
+            - heading "Développeur" [level=3] [ref=e340]
+            - generic [ref=e341]: La Maison du Test — Paris
+            - list [ref=e342]:
+              - listitem [ref=e343]:
+                - img [ref=e344]
+                - generic [ref=e346]: Outil interne pour études consommateurs (création + gestion)
+              - listitem [ref=e347]:
+                - img [ref=e348]
+                - generic [ref=e350]: Back PHP / Laravel, front JavaScript
+              - listitem [ref=e351]:
+                - img [ref=e352]
+                - generic [ref=e354]: Automatisation collecte & nettoyage de données brutes
+              - listitem [ref=e355]:
+                - img [ref=e356]
+                - generic [ref=e358]: Intégration LLM dans le workflow de production
+        - generic [ref=e360]:
+          - generic [ref=e361]: 2023 — 2026
+          - generic [ref=e362]:
+            - heading "Restauration et salle de sport" [level=3] [ref=e363]
+            - generic [ref=e364]: Dokidoki · Gros Bao · Battling Club
+            - list [ref=e365]:
+              - listitem [ref=e366]:
+                - img [ref=e367]
+                - generic [ref=e369]: Restaurant Dokidoki — 2023 → 2024
+              - listitem [ref=e370]:
+                - img [ref=e371]
+                - generic [ref=e373]: Restaurant Gros Bao — 2025 → 2026
+              - listitem [ref=e374]:
+                - img [ref=e375]
+                - generic [ref=e377]: Salle de sport Battling Club — 2024 → 2026
+              - listitem [ref=e378]:
+                - img [ref=e379]
+                - generic [ref=e381]: "Discipline, rythme, contact humain : ça forge autant qu'un sprint dev"
+        - generic [ref=e383]:
+          - generic [ref=e384]: 2018 — 2021
+          - generic [ref=e385]:
+            - heading "Licence Biochimie" [level=3] [ref=e386]
+            - generic [ref=e387]: Université de Montpellier
+            - list [ref=e388]:
+              - listitem [ref=e389]:
+                - img [ref=e390]
+                - generic [ref=e392]: Statistiques, méthode expérimentale, traitement de données
+              - listitem [ref=e393]:
+                - img [ref=e394]
+                - generic [ref=e396]: La rigueur scientifique avant la rigueur du code
+    - generic [ref=e398]:
+      - generic [ref=e401]: ♡ Hors écran · 05
+      - generic [ref=e402]:
+        - heading "Hors écran." [level=2] [ref=e403]:
+          - text: Hors
+          - text: écran.
+        - paragraph [ref=e404]: Trois pratiques qui structurent mon temps en dehors du clavier — discipline, stratégie et lâcher-prise. Elles déteignent forcément un peu sur la manière dont je travaille.
+      - generic [ref=e405]:
+        - generic [ref=e406]:
+          - generic [ref=e407]:
+            - img "Adem Nasri à l'entraînement de MMA, Le Cube Paris 11" [ref=e409]
+            - generic [ref=e411]: MMA
+          - img [ref=e413]
+          - generic [ref=e418]:
+            - generic [ref=e419]: MMA
+            - generic [ref=e420]: Le Cube — Bréguet-Sabin, Paris 11ᵉ
+        - generic [ref=e421]:
+          - generic [ref=e422]:
+            - img "Adem Nasri jouant aux échecs, Club du Canal Saint-Martin" [ref=e424]
+            - generic [ref=e426]: Échecs
+          - img [ref=e428]
+          - generic [ref=e434]:
+            - generic [ref=e435]: Échecs
+            - generic [ref=e436]: Club du Canal Saint-Martin
+            - link "↗ voir ma fiche FFE" [ref=e437] [cursor=pointer]:
+              - /url: https://www.echecs.asso.fr/FicheJoueur.aspx?Id=531713
+        - generic [ref=e438]:
+          - generic [ref=e439]:
+            - img "Adem Nasri en session de surf" [ref=e441]
+            - generic [ref=e443]: Surf
+          - img [ref=e445]
+          - generic [ref=e447]:
+            - generic [ref=e448]: Surf
+            - generic [ref=e449]: savoir quand attendre
+    - generic [ref=e451]:
+      - img [ref=e452]
+      - heading "Le CV en PDF, version classique." [level=2] [ref=e454]:
+        - text: Le CV en PDF,
+        - text: version classique.
+      - paragraph [ref=e455]: Une page propre, prête à imprimer ou à transmettre. Mise à jour fin 2026.
+      - link "↓ Télécharger le CV" [ref=e456] [cursor=pointer]:
+        - /url: cv-adem-nasri.6343d3d69e.pdf
+      - generic [ref=e457]: (PDF · ~135 ko)
+    - generic [ref=e459]:
+      - generic [ref=e462]: ✉ Contact · 06
+      - generic [ref=e463]:
+        - generic [ref=e464]:
+          - heading "Causons." [level=2] [ref=e465]
+          - paragraph [ref=e466]: "Un site à construire, un référencement à reprendre, ou simplement une question technique : je réponds vite, et toujours en personne."
+          - link "M'écrire un mot →" [ref=e467] [cursor=pointer]:
+            - /url: contact/
+        - generic [ref=e468]:
+          - link "Email nasri.adem@hotmail.fr" [ref=e469] [cursor=pointer]:
+            - /url: mailto:nasri.adem@hotmail.fr
+            - generic [ref=e470]: Email
+            - generic [ref=e471]: nasri.adem@hotmail.fr
+          - link "Téléphone 06 18 56 76 75" [ref=e472] [cursor=pointer]:
+            - /url: tel:0618567675
+            - generic [ref=e473]: Téléphone
+            - generic [ref=e474]: 06 18 56 76 75
+          - link "LinkedIn linkedin.com/in/adem-nasri" [ref=e475] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/adem-nasri
+            - generic [ref=e476]: LinkedIn
+            - generic [ref=e477]: linkedin.com/in/adem-nasri
+          - generic [ref=e478]:
+            - generic [ref=e479]: Localisation
+            - generic [ref=e480]: 12 rue d'Orchampt, Paris 18ᵉ
+  - contentinfo [ref=e481]:
+    - generic [ref=e482]:
+      - generic [ref=e483]:
+        - generic [ref=e484]: adem.
+        - generic [ref=e485]: Fait main, à Paris, en 2026.
+      - generic [ref=e486]:
+        - text: © 2026 Adem Nasri · tous droits réservés
+        - text: — pas de cookies, pas de tracking, juste un site.

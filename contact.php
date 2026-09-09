@@ -54,8 +54,21 @@ function trop_de_messages(): bool {
 }
 
 // ---------------------------------------------------------------- traitement
-if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
-    repondre(405, ['ok' => false, 'erreur' => 'methode']);
+$methode = $_SERVER['REQUEST_METHOD'] ?? '';
+
+// Un humain qui tape l'adresse du script dans sa barre est renvoye vers le
+// formulaire. Toute autre methode que POST est refusee franchement, sans
+// redirection : un 303 a la place d'un 405 masque l'erreur a un client.
+if ($methode === 'GET' || $methode === 'HEAD') {
+    header('Location: /contact/', true, 303);
+    exit;
+}
+if ($methode !== 'POST') {
+    http_response_code(405);
+    header('Allow: POST');
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode(['ok' => false, 'erreur' => 'methode'], JSON_UNESCAPED_UNICODE);
+    exit;
 }
 
 // Champ piege : invisible pour un humain, rempli par les robots.

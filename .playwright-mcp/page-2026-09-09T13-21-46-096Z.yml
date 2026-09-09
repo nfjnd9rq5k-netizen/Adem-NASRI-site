@@ -1,0 +1,209 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]: This XML file does not appear to have any style information associated with it. The document tree is shown below.
+  - generic [ref=e4]:
+    - generic [ref=e7]:
+      - text: <urlset
+      - generic [ref=e8]: xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      - text: ">"
+    - generic [ref=e9]:
+      - generic [ref=e10]:
+        - generic [ref=e13]: <url>
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - generic [ref=e16]: <loc>
+            - text: https://adem-nasri.fr/
+            - generic [ref=e17]: </loc>
+          - generic [ref=e18]:
+            - generic [ref=e19]: <lastmod>
+            - text: 2026-09-09
+            - generic [ref=e20]: </lastmod>
+          - generic [ref=e21]:
+            - generic [ref=e22]: <changefreq>
+            - text: monthly
+            - generic [ref=e23]: </changefreq>
+          - generic [ref=e24]:
+            - generic [ref=e25]: <priority>
+            - text: "1.0"
+            - generic [ref=e26]: </priority>
+        - generic [ref=e28]: </url>
+      - generic [ref=e29]:
+        - generic [ref=e32]: <url>
+        - generic [ref=e33]:
+          - generic [ref=e34]:
+            - generic [ref=e35]: <loc>
+            - text: https://adem-nasri.fr/projets/
+            - generic [ref=e36]: </loc>
+          - generic [ref=e37]:
+            - generic [ref=e38]: <lastmod>
+            - text: 2026-09-09
+            - generic [ref=e39]: </lastmod>
+          - generic [ref=e40]:
+            - generic [ref=e41]: <changefreq>
+            - text: monthly
+            - generic [ref=e42]: </changefreq>
+          - generic [ref=e43]:
+            - generic [ref=e44]: <priority>
+            - text: "0.9"
+            - generic [ref=e45]: </priority>
+        - generic [ref=e47]: </url>
+      - generic [ref=e48]:
+        - generic [ref=e51]: <url>
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - generic [ref=e54]: <loc>
+            - text: https://adem-nasri.fr/parcours/
+            - generic [ref=e55]: </loc>
+          - generic [ref=e56]:
+            - generic [ref=e57]: <lastmod>
+            - text: 2026-09-09
+            - generic [ref=e58]: </lastmod>
+          - generic [ref=e59]:
+            - generic [ref=e60]: <changefreq>
+            - text: monthly
+            - generic [ref=e61]: </changefreq>
+          - generic [ref=e62]:
+            - generic [ref=e63]: <priority>
+            - text: "0.8"
+            - generic [ref=e64]: </priority>
+        - generic [ref=e66]: </url>
+      - generic [ref=e67]:
+        - generic [ref=e70]: <url>
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - generic [ref=e73]: <loc>
+            - text: https://adem-nasri.fr/contact/
+            - generic [ref=e74]: </loc>
+          - generic [ref=e75]:
+            - generic [ref=e76]: <lastmod>
+            - text: 2026-09-09
+            - generic [ref=e77]: </lastmod>
+          - generic [ref=e78]:
+            - generic [ref=e79]: <changefreq>
+            - text: monthly
+            - generic [ref=e80]: </changefreq>
+          - generic [ref=e81]:
+            - generic [ref=e82]: <priority>
+            - text: "0.7"
+            - generic [ref=e83]: </priority>
+        - generic [ref=e85]: </url>
+      - generic [ref=e86]:
+        - generic [ref=e89]: <url>
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - generic [ref=e92]: <loc>
+            - text: https://adem-nasri.fr/projets/kines-paris-maison-du-peps/
+            - generic [ref=e93]: </loc>
+          - generic [ref=e94]:
+            - generic [ref=e95]: <lastmod>
+            - text: 2026-09-09
+            - generic [ref=e96]: </lastmod>
+          - generic [ref=e97]:
+            - generic [ref=e98]: <changefreq>
+            - text: monthly
+            - generic [ref=e99]: </changefreq>
+          - generic [ref=e100]:
+            - generic [ref=e101]: <priority>
+            - text: "0.7"
+            - generic [ref=e102]: </priority>
+        - generic [ref=e104]: </url>
+      - generic [ref=e105]:
+        - generic [ref=e108]: <url>
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - generic [ref=e111]: <loc>
+            - text: https://adem-nasri.fr/projets/chalery/
+            - generic [ref=e112]: </loc>
+          - generic [ref=e113]:
+            - generic [ref=e114]: <lastmod>
+            - text: 2026-09-09
+            - generic [ref=e115]: </lastmod>
+          - generic [ref=e116]:
+            - generic [ref=e117]: <changefreq>
+            - text: monthly
+            - generic [ref=e118]: </changefreq>
+          - generic [ref=e119]:
+            - generic [ref=e120]: <priority>
+            - text: "0.7"
+            - generic [ref=e121]: </priority>
+        - generic [ref=e123]: </url>
+      - generic [ref=e124]:
+        - generic [ref=e127]: <url>
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - generic [ref=e130]: <loc>
+            - text: https://adem-nasri.fr/projets/amb-energies/
+            - generic [ref=e131]: </loc>
+          - generic [ref=e132]:
+            - generic [ref=e133]: <lastmod>
+            - text: 2026-09-09
+            - generic [ref=e134]: </lastmod>
+          - generic [ref=e135]:
+            - generic [ref=e136]: <changefreq>
+            - text: monthly
+            - generic [ref=e137]: </changefreq>
+          - generic [ref=e138]:
+            - generic [ref=e139]: <priority>
+            - text: "0.7"
+            - generic [ref=e140]: </priority>
+        - generic [ref=e142]: </url>
+      - generic [ref=e143]:
+        - generic [ref=e146]: <url>
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - generic [ref=e149]: <loc>
+            - text: https://adem-nasri.fr/projets/relapro/
+            - generic [ref=e150]: </loc>
+          - generic [ref=e151]:
+            - generic [ref=e152]: <lastmod>
+            - text: 2026-09-09
+            - generic [ref=e153]: </lastmod>
+          - generic [ref=e154]:
+            - generic [ref=e155]: <changefreq>
+            - text: monthly
+            - generic [ref=e156]: </changefreq>
+          - generic [ref=e157]:
+            - generic [ref=e158]: <priority>
+            - text: "0.7"
+            - generic [ref=e159]: </priority>
+        - generic [ref=e161]: </url>
+      - generic [ref=e162]:
+        - generic [ref=e165]: <url>
+        - generic [ref=e166]:
+          - generic [ref=e167]:
+            - generic [ref=e168]: <loc>
+            - text: https://adem-nasri.fr/projets/malamour/
+            - generic [ref=e169]: </loc>
+          - generic [ref=e170]:
+            - generic [ref=e171]: <lastmod>
+            - text: 2026-09-09
+            - generic [ref=e172]: </lastmod>
+          - generic [ref=e173]:
+            - generic [ref=e174]: <changefreq>
+            - text: monthly
+            - generic [ref=e175]: </changefreq>
+          - generic [ref=e176]:
+            - generic [ref=e177]: <priority>
+            - text: "0.7"
+            - generic [ref=e178]: </priority>
+        - generic [ref=e180]: </url>
+      - generic [ref=e181]:
+        - generic [ref=e184]: <url>
+        - generic [ref=e185]:
+          - generic [ref=e186]:
+            - generic [ref=e187]: <loc>
+            - text: https://adem-nasri.fr/projets/la-maison-du-test/
+            - generic [ref=e188]: </loc>
+          - generic [ref=e189]:
+            - generic [ref=e190]: <lastmod>
+            - text: 2026-09-09
+            - generic [ref=e191]: </lastmod>
+          - generic [ref=e192]:
+            - generic [ref=e193]: <changefreq>
+            - text: monthly
+            - generic [ref=e194]: </changefreq>
+          - generic [ref=e195]:
+            - generic [ref=e196]: <priority>
+            - text: "0.7"
+            - generic [ref=e197]: </priority>
+        - generic [ref=e199]: </url>
+    - generic [ref=e201]: </urlset>

@@ -11,10 +11,29 @@ RedirectMatch 301 "^/cv-adem-nasri\.pdf$" /cv-adem-nasri.6343d3d69e.pdf
 RedirectMatch 301 "^/CV(?:%20|[ +])Adem(?:%20|[ +])Nasri(?:%20|[ +])FR(?:%20|[ +])Mainframe\.pdf$" /cv-adem-nasri.6343d3d69e.pdf
 # <<< fin du bloc genere
 
-# Force HTTPS (au cas où)
 RewriteEngine On
+
+# Un seul hote. www.adem-nasri.fr repondait 200 comme le domaine nu : deux
+# adresses pour le meme contenu. Le canonical le disait deja, mais une
+# redirection le rend opposable. Placee avant la regle HTTPS, la bascule
+# http://www -> https://apex se fait en un seul saut.
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+# Force HTTPS (au cas où)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Sources de fabrication : jamais servies.
+# Le Disallow du robots.txt n'interdit rien — il signale seulement un chemin
+# aux robots qui veulent bien le lire. gen.py, data.py et le reste etaient
+# telechargeables en clair. Ici le serveur refuse, ce qui est opposable.
+RedirectMatch 404 "^/(tools|cv-source)/|^/build\.py$"
+
+# La page 403 dans la charte du site plutot que la page brute du serveur.
+# (« Options -Indexes » serait redondant : le listing est deja desactive,
+# et une directive Options non autorisee ferait echouer tout le fichier.)
+ErrorDocument 403 /404.html
 
 # Compression gzip pour text/CSS/JS/SVG/HTML/XML/JSON/WOFF
 <IfModule mod_deflate.c>
