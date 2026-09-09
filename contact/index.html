@@ -36,7 +36,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png"/>
 <link rel="apple-touch-icon" href="../apple-touch-icon.png"/>
 
-<link rel="stylesheet" href="../assets/build/styles.0b5c447a0a.css"/>
+<link rel="stylesheet" href="../assets/build/styles.27c313ca9f.css"/>
 </head>
 <body>
 
@@ -75,7 +75,7 @@
     <div class="contact-page-grid">
 
       <div class="card-hand contact-card" data-reveal>
-        <form id="contact-form" class="contact-form">
+        <form id="contact-form" class="contact-form" action="/contact.php" method="post">
           <div class="field">
             <label class="label" for="contact-name">Ton nom</label>
             <input id="contact-name" type="text" name="name" required placeholder="Comme tes parents te connaissent" autocomplete="name"/>
@@ -98,10 +98,15 @@
             <label class="label" for="contact-message">Le mot</label>
             <textarea id="contact-message" name="message" required placeholder="Raconte-moi ce que tu as en tête…"></textarea>
           </div>
+          <div class="hp" aria-hidden="true">
+            <label for="contact-site">Laisser vide</label>
+            <input id="contact-site" type="text" name="site_web" tabindex="-1" autocomplete="off"/>
+          </div>
+          <p id="contact-status" class="contact-status" role="status" aria-live="polite" hidden></p>
           <button type="submit" class="btn btn-dark">Envoyer le mot →</button>
         </form>
 
-        <div id="contact-sent" class="contact-sent" hidden>
+        <div id="contact-sent" class="contact-sent" tabindex="-1" hidden>
           <svg viewBox="0 0 30 30" style="width:60px;height:60px;color:var(--accent);margin:0 auto 16px;display:block" aria-hidden="true">
             <path d="M5 16 L 12 23 L 26 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
@@ -190,7 +195,7 @@
 </script>
 
 <script src="../assets/build/nav.58bf219ed9.js" defer></script>
-<script src="../assets/build/contact.6e6ed7db0a.js" defer></script>
+<script src="../assets/build/contact.395489907d.js" defer></script>
 <script src="../assets/build/animations.be9c0244b4.js" defer></script>
 </body>
 </html>
