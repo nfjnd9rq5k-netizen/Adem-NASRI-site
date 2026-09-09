@@ -102,6 +102,19 @@
     update();
   }
 
+  // ── 6b. Site frames — the captured screenshot scrolls while it's on screen ─
+  // Only the frames actually in view animate, so a page holding six of them
+  // never pays for more than the one or two the visitor is looking at.
+  const frames = document.querySelectorAll('.site-frame');
+  if (frames.length) {
+    const frameIO = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle('is-playing', entry.isIntersecting);
+      });
+    }, { threshold: 0.4 });
+    frames.forEach((el) => frameIO.observe(el));
+  }
+
   // ── 7. Hero polaroid drops on load (above the fold) ──────────────────────
   window.addEventListener('load', () => {
     document.querySelectorAll('.hero-pose .polaroid-drop').forEach((el) => {
