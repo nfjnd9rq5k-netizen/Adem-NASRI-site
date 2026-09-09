@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nfjnd9rq5k-netizen.github.io/Adem-NASRI-site/sitemap.xml
+Sitemap: https://adem-nasri.fr/sitemap.xml
