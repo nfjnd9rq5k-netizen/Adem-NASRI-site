@@ -2,7 +2,7 @@
 """Generateur des pages etude de cas du portfolio Adem Nasri.
 Une seule source de verite pour le gabarit : les 6 pages sortent identiques
 en structure, seules les donnees changent."""
-import html, json, os, sys
+import datetime, html, json, os, subprocess, sys
 
 # la racine du site = le dossier parent de tools/
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -551,17 +551,88 @@ def patch_home(cases):
     return p, src.count('<article class="project-row"'), len(cases)
 
 
-def patch_sitemap(cases, lastmod):
-    """Reecrit sitemap.xml avec les pages etude de cas."""
-    urls = [(BASE + "/", "1.0"), (BASE + "/projets/", "0.9"),
-            (BASE + "/parcours/", "0.8"), (BASE + "/contact/", "0.7")]
-    urls += [(f"{BASE}/projets/{c['slug']}/", "0.7") for c in cases]
+def _date_modif(chemin_relatif):
+    """Date de derniere modification reelle d'une page.
+
+    On interroge git plutot que la date du fichier : regenerer les pages touche
+    le mtime meme quand le contenu n'a pas bouge, alors que lastmod doit dire
+    quand le CONTENU a change. Si la page a des modifications non commitees,
+    c'est qu'elle change aujourd'hui."""
+    chemin = os.path.join(ROOT, chemin_relatif)
+    if not os.path.exists(chemin):
+        return datetime.date.today().isoformat()
+    try:
+        modifie = subprocess.run(["git", "status", "--porcelain", "--", chemin_relatif],
+                                 cwd=ROOT, capture_output=True, text=True, timeout=10)
+        if modifie.returncode == 0 and modifie.stdout.strip():
+            return datetime.date.today().isoformat()
+        r = subprocess.run(["git", "log", "-1", "--format=%cs", "--", chemin_relatif],
+                           cwd=ROOT, capture_output=True, text=True, timeout=10)
+        if r.returncode == 0 and r.stdout.strip():
+            return r.stdout.strip()
+    except Exception:
+        pass
+    return datetime.date.today().isoformat()
+
+
+def patch_sitemap(cases, lastmod=None):
+    """Reecrit sitemap.xml. lastmod est calcule par page, pas fige."""
+    urls = [(BASE + "/", "1.0", "index.html"),
+            (BASE + "/projets/", "0.9", "projets/index.html"),
+            (BASE + "/parcours/", "0.8", "parcours/index.html"),
+            (BASE + "/contact/", "0.7", "contact/index.html")]
+    urls += [(f"{BASE}/projets/{c['slug']}/", "0.7", f"projets/{c['slug']}/index.html")
+             for c in cases]
     body = "\n".join(
-        f'  <url>\n    <loc>{u}</loc>\n    <lastmod>{lastmod}</lastmod>\n'
+        f'  <url>\n    <loc>{u}</loc>\n    <lastmod>{_date_modif(f)}</lastmod>\n'
         f'    <changefreq>monthly</changefreq>\n    <priority>{pr}</priority>\n  </url>'
-        for u, pr in urls)
+        for u, pr, f in urls)
     p = os.path.join(ROOT, "sitemap.xml")
     open(p, "w", encoding="utf-8").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + body + "\n</urlset>\n")
     return p, len(urls)
+
+
+def error_page():
+    """Page 404. Chemins ABSOLUS : le serveur la sert a l'URL demandee, donc
+    des liens relatifs se resoudraient depuis /un/chemin/inconnu/."""
+    up = "/"
+    out = [head("Page introuvable — Adem Nasri",
+                "Cette page n'existe pas ou plus. Retour à l'accueil, aux projets ou au contact.",
+                BASE + "/404.html", up, f"{BASE}/assets/og-image.webp")]
+    out[0] = out[0].replace('<meta name="robots" content="index, follow"/>',
+                            '<meta name="robots" content="noindex, follow"/>')
+    out.append(nav(None, up))
+    out.append("\n<main id=\"main\">\n")
+    out.append(f"""<section class="section" style="padding-top:64px">
+  <div class="shell">
+    {label("✱", "Erreur 404")}
+    <div class="about-grid" style="margin-top:26px">
+      <div>
+        <h1 class="hand-xxl" data-reveal data-reveal-delay="1">Page<br/><span style="color:var(--accent)">introuvable</span>.</h1>
+        {souligne(230)}
+      </div>
+      <div>
+        <p class="body-lg" data-reveal data-reveal-delay="1" style="margin-bottom:22px">
+          Cette adresse ne mène à rien. Soit la page a changé de nom, soit le lien
+          qui t'a amené ici était déjà cassé. Dans les deux cas, ce n'est pas ta faute.
+        </p>
+        <p class="body-lg" data-reveal data-reveal-delay="2" style="margin-bottom:28px">
+          Voilà par où reprendre :
+        </p>
+        <ul class="case-list" data-reveal data-reveal-delay="3">
+          <li><a href="/">L'accueil</a> — qui je suis et ce que je fais</li>
+          <li><a href="/projets/">Les projets</a> — six sites livrés, avec leur étude de cas</li>
+          <li><a href="/parcours/">Le parcours</a> — d'où je viens</li>
+          <li><a href="/contact/">Le contact</a> — pour me dire ce que tu cherchais</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+""")
+    out.append("\n</main>\n")
+    out.append(footer(up))
+    out.append(scripts(up))
+    return "".join(out)

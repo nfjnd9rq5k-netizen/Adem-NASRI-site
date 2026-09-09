@@ -38,8 +38,13 @@ def main():
     for p in pages:
         print(f"  {os.path.relpath(p, ROOT):46} {os.path.getsize(p):>7} o")
 
-    chemin, n = gen.patch_sitemap(data.CASES, data.LASTMOD)
-    print(f"\n{os.path.relpath(chemin, ROOT)} : {n} URLs (lastmod {data.LASTMOD})")
+    err = os.path.join(ROOT, "404.html")
+    with open(err, "w", encoding="utf-8") as f:
+        f.write(gen.error_page())
+    print(f"  {'404.html':46} {os.path.getsize(err):>7} o")
+
+    chemin, n = gen.patch_sitemap(data.CASES)
+    print(f"\n{os.path.relpath(chemin, ROOT)} : {n} URLs (lastmod calcule par page)")
 
     print()
     r = subprocess.run([sys.executable, os.path.join(ROOT, "build.py")],

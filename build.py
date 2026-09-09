@@ -75,8 +75,10 @@ def main():
 
     # references : href/src vers styles.css, nav.js... quel que soit le prefixe
     # relatif, et qu'elles soient deja empreintees ou non
+    # le prefixe est soit relatif (../../), soit absolu (/) pour la page 404,
+    # que le serveur rend a l'URL demandee : un chemin relatif y serait faux
     motif = re.compile(
-        r'(href|src)="((?:\.\./)*)(?:assets/build/)?'
+        r'(href|src)="(/|(?:\.\./)*)(?:assets/build/)?'
         r'(styles|animations|nav|contact)(?:\.[0-9a-f]{6,12})?\.(css|js)"')
 
     total = 0

@@ -1811,3 +1811,26 @@ img {
 .contact-status.is-ok { border-color: #2d8a4e; background: rgba(45, 138, 78, 0.08); }
 .contact-form input.is-invalid,
 .contact-form textarea.is-invalid { border-color: var(--accent); }
+
+/* ---- Liste de reprise de la page 404 ---- */
+.case-list { list-style: none; max-width: 640px; }
+.case-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 13px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.case-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--font-marker);
+}
+.case-list a {
+  font-family: var(--font-marker);
+  font-size: 1.2rem;
+  border-bottom: 2px solid var(--accent);
+}
+.case-list a:hover { color: var(--accent); }

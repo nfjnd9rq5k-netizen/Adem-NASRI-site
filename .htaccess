@@ -3,7 +3,9 @@
 Redirect 301 /projets.html /projets/
 Redirect 301 /contact.html /contact/
 Redirect 301 /index.html /
-Redirect 301 /CV%20Adem%20Nasri%20FR%20Mainframe.pdf /cv-adem-nasri.pdf
+# mod_alias compare ses motifs a l'URL DECODEE : un motif contenant %20 ne
+# peut jamais correspondre. On accepte donc l'espace sous ses trois formes.
+RedirectMatch 301 "^/CV(?:%20|[ +])Adem(?:%20|[ +])Nasri(?:%20|[ +])FR(?:%20|[ +])Mainframe\.pdf$" /cv-adem-nasri.pdf
 
 # Force HTTPS (au cas où)
 RewriteEngine On
@@ -37,5 +39,7 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   Header set Permissions-Policy "interest-cohort=()"
 </IfModule>
 
-# 404 → home (au cas où)
-ErrorDocument 404 /
+# Une vraie page 404, avec son code 404.
+# Rediriger toute URL inconnue vers l'accueil produit des « soft 404 » :
+# Search Console les signale, et surtout ca masque les liens reellement casses.
+ErrorDocument 404 /404.html
