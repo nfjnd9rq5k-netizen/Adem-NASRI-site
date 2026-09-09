@@ -1628,3 +1628,136 @@ img {
   .cr-proof { gap: 10px 18px; }
   .case-meta { gap: 18px 20px; }
 }
+
+/* ============================================
+   GRILLE PROJETS — vignettes compactes
+   (refonte 2026-09 : la page liste passe en grille)
+   ============================================ */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px 32px;
+  padding: 8px 0 16px;
+}
+
+.case-card { display: flex; flex-direction: column; }
+
+/* le cadre navigateur en version vignette */
+.case-card .site-frame { --sf-h: 210px; margin-bottom: 18px; }
+
+.case-card .cc-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.case-card .cc-num {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  color: var(--accent);
+}
+.case-card .cc-year {
+  font-family: var(--font-mono);
+  font-size: .68rem;
+  letter-spacing: .05em;
+  color: var(--ink-mute);
+  margin-left: auto;
+}
+.case-card h2 {
+  font-family: var(--font-hand);
+  font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+.case-card h2 a:hover { color: var(--accent); }
+.case-card .cc-role {
+  font-family: var(--font-marker);
+  font-size: 1.12rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+.case-card .cc-body {
+  font-size: .94rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+.case-card .cc-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin-bottom: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--paper-line);
+}
+.case-card .cc-proof div { line-height: 1.2; }
+.case-card .cc-proof .n {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  color: var(--accent);
+  display: block;
+}
+.case-card .cc-proof .l {
+  font-family: var(--font-mono);
+  font-size: .6rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--ink-mute);
+}
+.case-card .cc-links {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+  padding-top: 4px;
+}
+.case-card .cc-case {
+  font-family: var(--font-marker);
+  font-size: 1.12rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 1px;
+}
+.case-card .cc-case:hover { color: var(--accent); }
+.case-card .cc-site {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  color: var(--ink-mute);
+  border: 1.5px solid var(--ink);
+  border-radius: 999px;
+  padding: 4px 11px;
+  transition: background .2s ease, color .2s ease;
+}
+.case-card .cc-site:hover { background: var(--ink); color: var(--paper); }
+.case-card .cc-site.is-off { border-style: dashed; opacity: .6; }
+
+/* vignette sans capture (outil interne) */
+.cc-noshot {
+  height: 244px;
+  border: 2px solid var(--ink);
+  background: var(--paper-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-marker);
+  font-size: 1.1rem;
+  color: var(--ink-mute);
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 18px;
+  position: relative;
+  transform: rotate(-0.6deg);
+}
+
+/* sur les pages etude de cas, on borne la largeur du cadre :
+   la capture fait 1500 px de large, l'afficher plus etroit la garde nette */
+.case-block .site-frame { max-width: 940px; }
+.shot-duo .site-frame { max-width: none; }
+
+@media (max-width: 700px) {
+  .case-grid { grid-template-columns: 1fr; gap: 34px; }
+  .case-card .site-frame { --sf-h: 200px; }
+  .cc-noshot { height: 234px; }
+}

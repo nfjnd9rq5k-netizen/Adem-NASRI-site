@@ -105,7 +105,9 @@
   // ── 6b. Site frames — the captured screenshot scrolls while it's on screen ─
   // Only the frames actually in view animate, so a page holding six of them
   // never pays for more than the one or two the visitor is looking at.
-  const frames = document.querySelectorAll('.site-frame');
+  // Les vignettes de la grille projets ne portent pas data-autoplay : elles ne
+  // défilent qu'au survol, sinon six captures s'animeraient en même temps.
+  const frames = document.querySelectorAll('.site-frame[data-autoplay]');
   if (frames.length) {
     const frameIO = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {

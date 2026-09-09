@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /cv-source/
 
 Sitemap: https://adem-nasri.fr/sitemap.xml

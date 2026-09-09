@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"/>
+<title>CV — Adem Nasri</title>
+<meta name="robots" content="noindex, nofollow"/>
+<!-- Source du CV. Pour regenerer le PDF : ouvrir cette page et imprimer en A4,
+     ou node cv-source/render.js (Playwright). Le PDF vit a la racine : cv-adem-nasri.pdf -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{ --ink:#1a1815; --soft:#3a3530; --mute:#6b6157; --line:#d9d2c6; --accent:#d8541f; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  @page{ size:A4; margin:11mm 13mm; }
+  body{ font-family:Inter,system-ui,sans-serif; color:var(--ink); font-size:9pt; line-height:1.34; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+
+  
+  .avoid{ break-inside:avoid }
+  .name{ font-size:24pt; font-weight:700; letter-spacing:-.02em; line-height:1 }
+  .role{ font-size:11.5pt; font-weight:600; color:var(--accent); margin-top:3pt }
+  .contact{ font-size:8.6pt; color:var(--mute); margin-top:7pt; line-height:1.7 }
+  .contact a{ color:var(--mute); text-decoration:none }
+  .contact span{ white-space:nowrap }
+  .sep{ color:var(--line); margin:0 5pt }
+  header{ border-bottom:2pt solid var(--accent); padding-bottom:7pt; margin-bottom:9pt }
+
+  h2{ font-size:8.2pt; font-weight:700; letter-spacing:.13em; text-transform:uppercase;
+      color:var(--accent); margin:10pt 0 5pt; padding-bottom:2.5pt; border-bottom:.6pt solid var(--line) }
+  h2:first-of-type{ margin-top:0 }
+
+  .profil{ font-size:9pt; color:var(--soft) }
+  .profil b{ color:var(--ink); font-weight:600 }
+
+  .sk{ display:grid; grid-template-columns:33mm 1fr; gap:1.6pt 7pt; font-size:8.7pt }
+  .sk dt{ font-weight:600; color:var(--ink) }
+  .sk dd{ color:var(--soft) }
+  .note{ color:var(--mute); font-style:italic }
+
+  .job{ margin-bottom:7pt; break-inside:avoid }
+  .job-h{ display:flex; justify-content:space-between; align-items:baseline; gap:8pt }
+  .job-t{ font-size:10pt; font-weight:700 }
+  .job-d{ font-size:8.4pt; color:var(--mute); white-space:nowrap; font-weight:500 }
+  .job-o{ font-size:9.1pt; color:var(--accent); font-weight:600; margin-bottom:3pt }
+  ul{ list-style:none; margin-top:2pt }
+  li{ position:relative; padding-left:9pt; margin-bottom:1.2pt; color:var(--soft); font-size:8.8pt }
+  li::before{ content:""; position:absolute; left:0; top:.5em; width:3pt; height:3pt;
+              background:var(--accent); border-radius:50% }
+  li b{ color:var(--ink); font-weight:600 }
+
+  .two{ display:grid; grid-template-columns:1fr 1fr; gap:0 14pt }
+  .mini{ font-size:8.6pt; color:var(--soft) }
+  .mini b{ color:var(--ink); font-weight:600; display:block; font-size:9.1pt }
+  .mini .d{ color:var(--mute); font-size:8.4pt }
+  .mini-row{ margin-bottom:5pt }
+</style></head><body>
+
+<header>
+  <div class="name">Adem Nasri</div>
+  <div class="role">Développeur web freelance — sites, référencement SEO &amp; GEO</div>
+  <div class="contact">
+    <span>12 rue d'Orchampt, 75018 Paris</span><span class="sep">·</span><span>06 18 56 76 75</span><span class="sep">·</span><span>nasri.adem@hotmail.fr</span><br/>
+    <span>adem-nasri.fr</span><span class="sep">·</span><span>linkedin.com/in/adem-n</span><span class="sep">·</span><span>github.com/adem-n</span>
+  </div>
+</header>
+
+<h2>Profil</h2>
+<p class="profil">Développeur web freelance à Paris, <b>étudiant à l'École 42</b>. Je conçois des sites rapides en HTML, CSS et JavaScript — sans CMS ni framework à maintenir — puis j'assure leur référencement naturel et leur visibilité dans les réponses des IA. <b>Six sites en ligne pour cinq clients</b> : santé, énergie, e-commerce. Pour l'un d'eux, plus de <b>4 000 visites mensuelles six mois après la mise en ligne</b>.</p>
+
+<h2>Compétences</h2>
+<dl class="sk">
+  <dt>Sites web</dt><dd>HTML5 sémantique · CSS moderne (grid, flex, variables) · JavaScript ES6+ · responsive mobile-first · sites statiques</dd>
+  <dt>Référencement SEO</dt><dd>SEO technique · SEO local multi-établissements · données structurées Schema.org · rédaction optimisée · maillage interne · sitemaps, robots.txt, hreflang</dd>
+  <dt>GEO — visibilité IA</dt><dd>llms.txt · balisage FAQPage · contenu citable · accès crawlers (GPTBot, ClaudeBot, PerplexityBot)</dd>
+  <dt>SEA — publicité</dt><dd>Google Ads · Meta Ads · suivi des conversions <span class="note">— proposé, pas encore facturé</span></dd>
+  <dt>E-commerce</dt><dd>Shopify · Liquid (sections sur mesure) · catalogue et catégories produits · tunnel d'achat</dd>
+  <dt>Performance, conformité</dt><dd>Core Web Vitals · accessibilité WCAG · RGPD et bandeau de consentement · GA4 avec Consent Mode v2 · mise en ligne, HTTPS, .htaccess</dd>
+  <dt>Langues</dt><dd>Français natif · Anglais bilingue</dd>
+</dl>
+
+<h2>Expérience</h2>
+
+<div class="job">
+  <div class="job-h"><div class="job-t">Développeur web freelance</div><div class="job-d">2023 — aujourd'hui</div></div>
+  <div class="job-o">Paris — sites, référencement et e-commerce</div>
+  <ul>
+    <li><b>Kinés Paris &amp; Maison du Peps</b> — deux sites et le référencement continu d'un réseau de 5 cabinets de kiné et 2 salles de sport-santé. 100 pages, 46 articles, 524 questions balisées en FAQ, version anglaise complète. Plus de 4 000 visites mensuelles à six mois.</li>
+    <li><b>AMB Énergies</b> — site de 101 pages et référencement d'un installateur RGE : 65 guides, 12 pages villes, 8 650 liens internes sans page orpheline.</li>
+    <li><b>Relapro</b> — site et SEO local d'un bureau d'études thermiques : 5 villes couvertes, simulateur DPE en 9 étapes, barème MaPrimeRénov' intégré.</li>
+    <li><b>Chalery</b> — site vitrine et simulateur de prix en 7 écrans, avec plan de coupe du logement redessiné en SVG à chaque réponse.</li>
+    <li><b>Malamour</b> — boutique Shopify : design, 8 sections Liquid écrites sur mesure, catalogue produits et tunnel d'achat.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-h"><div class="job-t">Développeur</div><div class="job-d">Déc. 2025 — 2026</div></div>
+  <div class="job-o">La Maison du Test — Paris</div>
+  <ul>
+    <li>Outil interne de création et de gestion d'études consommateurs — back PHP/Laravel, front JavaScript.</li>
+    <li>Automatisation de la collecte et du nettoyage des données brutes.</li>
+    <li>Intégration de LLM dans le workflow d'analyse pour accélérer la production d'enseignements.</li>
+  </ul>
+</div>
+
+<div class="job">
+  <div class="job-h"><div class="job-t">Restauration et salle de sport</div><div class="job-d">2023 — aujourd'hui</div></div>
+  <div class="job-o">Dokidoki · Gros Bao · Battling Club — en parallèle</div>
+  <ul>
+    <li>Menés de front avec le développement pour financer la transition.</li>
+  </ul>
+</div>
+
+<div class="avoid"><h2>Formation</h2>
+<div class="two">
+  <div>
+    <div class="mini-row mini"><b>École 42 — Paris</b><span class="d">En cours</span><br/>Tronc commun : C, algorithmique, système, réseau. Pédagogie par projets et peer-learning, sans cours ni professeur.</div>
+    <div class="mini-row mini"><b>Piscine 42 — École 42 Paris</b><span class="d">2023</span><br/>Sélection intensive d'un mois : C, shell, algorithmique, code review continue entre pairs.</div>
+  </div>
+  <div>
+    <div class="mini-row mini"><b>Licence de Biochimie</b><span class="d">2018 — 2021</span><br/>Université de Montpellier — Faculté des Sciences. Statistiques, méthode expérimentale, traitement de données.</div>
+    <div class="mini-row mini"><b>Centres d'intérêt</b><br/>MMA · échecs · surf</div>
+  </div>
+</div>
+</div>
+
+</body></html>
