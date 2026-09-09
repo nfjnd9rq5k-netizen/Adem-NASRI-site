@@ -43,11 +43,16 @@ puis recontrole. Si un site client evolue, le chiffre doit etre reverifie avant
 d'etre laisse en ligne : un chiffre faux sur un portfolio coute plus cher que
 pas de chiffre.
 
-## Apres toute modification de CSS ou de JS
+## Apres toute modification de CSS, de JS, d'une capture ou du CV
 
 ```bash
 python3 build.py
 ```
+
+Il empreinte `styles.css`, les trois fichiers JS, les 25 captures de
+`assets/projets/` et le PDF du CV, puis reecrit toutes les references dans le
+HTML — et les deux redirections du CV dans `.htaccess`, entre les marqueurs
+`>>> genere par build.py`. Ne pas editer ce bloc a la main.
 
 Sans ca, les visiteurs continuent de recevoir l'ancienne version : le CDN de
 Hostinger garde des variantes compressees perimees, et `.htaccess` demande un

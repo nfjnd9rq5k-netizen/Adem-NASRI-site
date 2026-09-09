@@ -5,7 +5,11 @@ Redirect 301 /contact.html /contact/
 Redirect 301 /index.html /
 # mod_alias compare ses motifs a l'URL DECODEE : un motif contenant %20 ne
 # peut jamais correspondre. On accepte donc l'espace sous ses trois formes.
-RedirectMatch 301 "^/CV(?:%20|[ +])Adem(?:%20|[ +])Nasri(?:%20|[ +])FR(?:%20|[ +])Mainframe\.pdf$" /cv-adem-nasri.pdf
+# >>> genere par build.py — ne pas editer a la main
+# Les anciennes adresses du CV pointent vers le fichier empreinte du moment.
+RedirectMatch 301 "^/cv-adem-nasri\.pdf$" /cv-adem-nasri.422a23972d.pdf
+RedirectMatch 301 "^/CV(?:%20|[ +])Adem(?:%20|[ +])Nasri(?:%20|[ +])FR(?:%20|[ +])Mainframe\.pdf$" /cv-adem-nasri.422a23972d.pdf
+# <<< fin du bloc genere
 
 # Force HTTPS (au cas où)
 RewriteEngine On

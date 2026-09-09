@@ -15,6 +15,9 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SOURCES = ["styles.css", "animations.js", "nav.js", "contact.js"]
 OUT_DIR = "assets/build"
 IMG_DIR = "assets/projets"
+CV_BASE = "cv-adem-nasri"          # le PDF du CV, empreinte lui aussi
+MARQUE_DEBUT = "# >>> genere par build.py — ne pas editer a la main"
+MARQUE_FIN = "# <<< fin du bloc genere"
 RE_EMPREINTE = re.compile(r"^(?P<base>.+?)(?:\.[0-9a-f]{10})?\.webp$")
 
 
@@ -48,6 +51,51 @@ def empreinte_images():
     return renommes
 
 
+def empreinte_cv():
+    """Empreinte le PDF du CV et maintient ses redirections dans .htaccess.
+
+    Le CV est telecharge par des recruteurs : en servir une version perimee
+    coute cher. .htaccess demande un cache d'un mois sur les PDF et le CDN
+    servait encore le tout premier fichier. Le lien porte donc l'empreinte,
+    et deux redirections gardent les anciennes adresses fonctionnelles."""
+    courant = None
+    for f in os.listdir(ROOT):
+        m = re.match(rf"^{re.escape(CV_BASE)}(?:\.[0-9a-f]{{10}})?\.pdf$", f)
+        if m:
+            courant = f
+            break
+    if not courant:
+        return None
+    h = empreinte(os.path.join(ROOT, courant))
+    cible = f"{CV_BASE}.{h}.pdf"
+    if courant != cible:
+        os.replace(os.path.join(ROOT, courant), os.path.join(ROOT, cible))
+
+    # bloc de redirections regenere a chaque fois, entre marqueurs
+    bloc = (
+        f"{MARQUE_DEBUT}\n"
+        "# Les anciennes adresses du CV pointent vers le fichier empreinte du moment.\n"
+        f'RedirectMatch 301 "^/{CV_BASE}\\.pdf$" /{cible}\n'
+        'RedirectMatch 301 "^/CV(?:%20|[ +])Adem(?:%20|[ +])Nasri(?:%20|[ +])FR(?:%20|[ +])Mainframe\\.pdf$"'
+        f" /{cible}\n"
+        f"{MARQUE_FIN}"
+    )
+    ht = os.path.join(ROOT, ".htaccess")
+    contenu = open(ht, encoding="utf-8").read()
+    if MARQUE_DEBUT in contenu:
+        contenu = re.sub(re.escape(MARQUE_DEBUT) + r".*?" + re.escape(MARQUE_FIN),
+                         bloc, contenu, flags=re.S)
+    else:
+        # on remplace l'ancienne redirection manuelle, sinon on ajoute en tete
+        ancienne = re.compile(r'RedirectMatch 301 "\^/CV\(\?:%20.*?\n')
+        if ancienne.search(contenu):
+            contenu = ancienne.sub(bloc + "\n", contenu, count=1)
+        else:
+            contenu = bloc + "\n\n" + contenu
+    open(ht, "w", encoding="utf-8").write(contenu)
+    return cible
+
+
 def pages_html():
     for base, dirs, fichiers in os.walk(ROOT):
         dirs[:] = [d for d in dirs if d not in (".git", "assets", "cv-source")]
@@ -60,6 +108,9 @@ def main():
     renommes = empreinte_images()
     if renommes:
         print(f"{len(renommes)} captures renommees avec leur empreinte")
+    cv = empreinte_cv()
+    if cv:
+        print(f"CV empreinte : {cv}")
 
     os.makedirs(os.path.join(ROOT, OUT_DIR), exist_ok=True)
     versions = {}
@@ -80,6 +131,8 @@ def main():
     motif = re.compile(
         r'(href|src)="(/|(?:\.\./)*)(?:assets/build/)?'
         r'(styles|animations|nav|contact)(?:\.[0-9a-f]{6,12})?\.(css|js)"')
+    motif_cv = re.compile(
+        rf'(href)="(/|(?:\.\./)*)({re.escape(CV_BASE)})(?:\.[0-9a-f]{{10}})?\.pdf"')
 
     total = 0
     for page in pages_html():
@@ -93,6 +146,9 @@ def main():
             return f'{attr}="{prefixe}{OUT_DIR}/{cible}"'
 
         s2, n = motif.subn(rempl, s)
+        if cv:
+            s2, n2 = motif_cv.subn(lambda m: f'{m.group(1)}="{m.group(2)}{cv}"', s2)
+            n += n2
         if n:
             open(page, "w", encoding="utf-8").write(s2)
             total += n
